@@ -32,10 +32,17 @@
         }
         
         .hero-bg {
+            /* Hero background with a slow zoom animation effect */
             background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
             background-attachment: fixed;
+            animation: zoomBg 20s infinite alternate;
+        }
+
+        @keyframes zoomBg {
+            0% { background-size: 100% auto; }
+            100% { background-size: 110% auto; }
         }
 
         .reveal {
@@ -46,6 +53,33 @@
         .reveal.active {
             opacity: 1;
             transform: translateY(0);
+        }
+
+        .premium-accent {
+            color: #000; /* Black accent */
+        }
+        
+        .premium-border {
+            border-color: #000;
+        }
+        
+        .premium-bg {
+            background-color: #000;
+        }
+
+        .premium-hover:hover {
+            background-color: #fff;
+            color: #000;
+            border-color: #fff;
+        }
+        
+        .fade-in {
+            animation: fadeIn 0.3s ease-in-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
@@ -96,10 +130,10 @@
                 Offering the best deals on exceptional used cars in Manchester.
             </p>
             <div class="flex flex-col sm:flex-row gap-6 justify-center">
-                <a href="#stock" class="bg-white text-black font-bold py-4 px-10 tracking-widest uppercase hover:bg-gray-200 transition duration-300 shadow-lg border border-white">
+                <a href="#stock" class="bg-white text-black font-bold py-4 px-10 tracking-widest uppercase hover:bg-black hover:text-white transition duration-300 shadow-[0_4px_15px_rgba(0,0,0,0.3)] border-2 border-white hover:border-black rounded-sm transform hover:-translate-y-1">
                     Explore Stock
                 </a>
-                <a href="#contact" class="bg-transparent text-white font-bold py-4 px-10 tracking-widest uppercase hover:bg-white hover:text-black transition duration-300 border border-white">
+                <a href="#contact" class="bg-transparent text-white font-bold py-4 px-10 tracking-widest uppercase hover:bg-white hover:text-black transition duration-300 border-2 border-white rounded-sm transform hover:-translate-y-1">
                     Contact Us
                 </a>
             </div>
@@ -110,30 +144,30 @@
     <section id="about" class="py-24 bg-white">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="text-center max-w-4xl mx-auto mb-20 reveal">
-                <h2 class="text-3xl md:text-4xl font-bold text-black mb-6 tracking-widest uppercase">Drive Your Dream Car Home</h2>
-                <div class="w-16 h-1 bg-black mx-auto mb-8"></div>
-                <p class="text-lg text-gray-600 leading-relaxed font-light">
+                <h2 class="text-3xl md:text-5xl font-extrabold text-gray-900 mb-6 tracking-widest uppercase">Drive Your Dream Car Home</h2>
+                <div class="w-24 h-1 bg-black mx-auto mb-8 rounded-full"></div>
+                <p class="text-lg md:text-xl text-gray-600 leading-relaxed font-light">
                     Located in Manchester, <strong>Prestige and Performance Cars</strong> is your trusted partner in sourcing premium vehicles. We focus on curating a selection of high-quality used cars that deliver on both performance and luxury, ensuring you get the absolute best deal available.
                 </p>
             </div>
 
-            <div class="grid md:grid-cols-3 gap-10">
-                <div class="p-10 bg-gray-50 border-t-4 border-black hover:-translate-y-2 transition-transform duration-300 shadow-sm reveal">
-                    <svg class="w-12 h-12 text-black mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="p-10 bg-white border-t-4 border-black rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:-translate-y-3 transition-all duration-500 reveal group">
+                    <svg class="w-14 h-14 text-black group-hover:scale-110 transition-transform duration-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M9 12l2 2 4-4M7.835 4.697a3.42 3.42 0 001.946-.806 3.42 3.42 0 014.438 0 3.42 3.42 0 001.946.806 3.42 3.42 0 013.138 3.138 3.42 3.42 0 00.806 1.946 3.42 3.42 0 010 4.438 3.42 3.42 0 00-.806 1.946 3.42 3.42 0 01-3.138 3.138 3.42 3.42 0 00-1.946.806 3.42 3.42 0 01-4.438 0 3.42 3.42 0 00-1.946-.806 3.42 3.42 0 01-3.138-3.138 3.42 3.42 0 00-.806-1.946 3.42 3.42 0 010-4.438 3.42 3.42 0 00.806-1.946 3.42 3.42 0 013.138-3.138z"></path>
                     </svg>
                     <h3 class="text-xl font-bold text-black mb-3 uppercase tracking-wide">Premium Sourcing</h3>
                     <p class="text-gray-600 font-light">Every car in our collection is hand-picked by experts, ensuring rigorous standards of performance, history, and condition.</p>
                 </div>
-                <div class="p-10 bg-gray-50 border-t-4 border-black hover:-translate-y-2 transition-transform duration-300 shadow-sm reveal delay-100">
-                    <svg class="w-12 h-12 text-black mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="p-10 bg-white border-t-4 border-black rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:-translate-y-3 transition-all duration-500 reveal delay-100 group">
+                    <svg class="w-14 h-14 text-black group-hover:scale-110 transition-transform duration-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v8m0 0v1m0-1c-1.11 0-2.08-.402-2.599-1M21 12a9 9 0 11-18 0 9 9 0 0118 0z"></path>
                     </svg>
                     <h3 class="text-xl font-bold text-black mb-3 uppercase tracking-wide">Unbeatable Value</h3>
                     <p class="text-gray-600 font-light">We constantly monitor the market to guarantee our prices reflect the absolute best deals available on prestige vehicles.</p>
                 </div>
-                <div class="p-10 bg-gray-50 border-t-4 border-black hover:-translate-y-2 transition-transform duration-300 shadow-sm reveal delay-200">
-                    <svg class="w-12 h-12 text-black mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <div class="p-10 bg-white border-t-4 border-black rounded-xl shadow-[0_4px_20px_rgba(0,0,0,0.05)] hover:shadow-[0_10px_30px_rgba(0,0,0,0.15)] hover:-translate-y-3 transition-all duration-500 reveal delay-200 group">
+                    <svg class="w-14 h-14 text-black group-hover:scale-110 transition-transform duration-300 mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                         <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M14 10h4.764a2 2 0 011.789 2.894l-3.5 7A2 2 0 0115.263 21h-4.017c-.163 0-.326-.02-.485-.06L7 20m7-10V5a2 2 0 00-2-2h-.095c-.5 0-.905.405-.905.905 0 .714-.211 1.412-.608 2.006L7 11v9m7-10h-2M7 20H5a2 2 0 01-2-2v-6a2 2 0 012-2h2.514"></path>
                     </svg>
                     <h3 class="text-xl font-bold text-black mb-3 uppercase tracking-wide">Dedicated Support</h3>
@@ -144,16 +178,16 @@
     </section>
 
     <!-- Stock Section -->
-    <section id="stock" class="py-24 bg-gray-100 border-y border-gray-200">
+    <section id="stock" class="py-24 bg-gray-50">
         <div class="max-w-7xl mx-auto px-4 text-center reveal">
-            <h2 class="text-3xl md:text-4xl font-bold text-black mb-6 uppercase tracking-widest">Vehicles In Stock</h2>
-            <div class="w-16 h-1 bg-black mx-auto mb-16"></div>
+            <h2 class="text-3xl md:text-5xl font-extrabold text-black mb-6 uppercase tracking-widest">Vehicles In Stock</h2>
+            <div class="w-24 h-1 bg-black mx-auto mb-16 rounded-full"></div>
             
-            <div class="bg-white shadow-xl p-16 max-w-4xl mx-auto border-t-4 border-black">
-                <svg class="w-16 h-16 text-gray-300 mx-auto mb-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <div class="bg-white shadow-[0_8px_30px_rgba(0,0,0,0.08)] rounded-xl p-16 max-w-4xl mx-auto border-t-4 border-black transform hover:-translate-y-2 transition-transform duration-500">
+                <svg class="w-16 h-16 text-black mx-auto mb-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6.75 17.25h10.5m-10.5 0a2.25 2.25 0 11-4.5 0m4.5 0a2.25 2.25 0 10-4.5 0m15 0a2.25 2.25 0 114.5 0m-4.5 0a2.25 2.25 0 104.5 0M4.5 14.25h15l-1.62-4.86A3 3 0 0015.03 7.5H8.97a3 3 0 00-2.85 1.89L4.5 14.25zM8.25 7.5V5.25m0 0h4.5m-4.5 0L6.75 3.75m6 1.5L14.25 3.75M16.5 5.25h.75A3.75 3.75 0 0121 9v.75"></path>
                 </svg>
-                <h3 class="text-3xl font-bold text-black mb-6 tracking-wide uppercase">New Stock Arriving Soon</h3>
+                <h3 class="text-3xl font-bold text-gray-900 mb-6 tracking-wide uppercase">New Stock Arriving Soon</h3>
                 <p class="text-gray-500 text-lg font-light leading-relaxed max-w-2xl mx-auto">
                     We are currently updating our showroom with a highly anticipated selection of prestige and performance vehicles. Check back shortly for our exclusive new deals.
                 </p>
@@ -162,19 +196,19 @@
     </section>
 
     <!-- Contact Section (Form Removed, Centered Cards) -->
-    <section id="contact" class="py-24 bg-black text-white text-center">
+    <section id="contact" class="py-24 bg-[#0a0a0a] text-white text-center">
         <div class="max-w-7xl mx-auto px-6 lg:px-8">
             <div class="reveal">
-                <h2 class="text-3xl md:text-4xl font-bold mb-6 uppercase tracking-widest">Visit Our Showroom</h2>
-                <div class="w-16 h-1 bg-gray-600 mx-auto mb-10"></div>
+                <h2 class="text-3xl md:text-5xl font-extrabold mb-6 uppercase tracking-widest">Visit Our Showroom</h2>
+                <div class="w-24 h-1 bg-white mx-auto mb-10 rounded-full"></div>
                 <p class="text-gray-400 mb-16 text-lg font-light max-w-2xl mx-auto leading-relaxed">
                     Ready to find your next car? Drop by our Manchester unit, give us a call, or visit our website to learn more about our current inventory and upcoming stock.
                 </p>
                 
                 <div class="grid md:grid-cols-3 gap-8">
                     <!-- Address Card -->
-                    <div class="bg-gray-900 border border-gray-800 p-10 flex flex-col items-center hover:-translate-y-2 transition-transform duration-300">
-                        <svg class="w-12 h-12 text-white mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-xl p-10 flex flex-col items-center hover:-translate-y-2 hover:border-gray-500 transition-all duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.05)] group">
+                        <svg class="w-14 h-14 text-white mb-6 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path>
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path>
                         </svg>
@@ -187,23 +221,23 @@
                     </div>
 
                     <!-- Phone Card -->
-                    <div class="bg-gray-900 border border-gray-800 p-10 flex flex-col items-center hover:-translate-y-2 transition-transform duration-300">
-                        <svg class="w-12 h-12 text-white mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-xl p-10 flex flex-col items-center hover:-translate-y-2 hover:border-gray-500 transition-all duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.05)] group">
+                        <svg class="w-14 h-14 text-white mb-6 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path>
                         </svg>
                         <h4 class="text-xl font-bold mb-4 uppercase tracking-wide">Phone</h4>
-                        <a href="tel:+447447053504" class="text-gray-400 font-light hover:text-white transition duration-200">
+                        <a href="tel:+447447053504" class="text-gray-400 font-light hover:text-white transition duration-300">
                             +44 7447 053504
                         </a>
                     </div>
 
                     <!-- Website Card -->
-                    <div class="bg-gray-900 border border-gray-800 p-10 flex flex-col items-center hover:-translate-y-2 transition-transform duration-300">
-                        <svg class="w-12 h-12 text-white mb-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div class="bg-gray-900/80 backdrop-blur border border-gray-800 rounded-xl p-10 flex flex-col items-center hover:-translate-y-2 hover:border-gray-500 transition-all duration-500 shadow-[0_10px_30px_rgba(255,255,255,0.05)] group">
+                        <svg class="w-14 h-14 text-white mb-6 transform group-hover:scale-110 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9m-9 9a9 9 0 019-9"></path>
                         </svg>
                         <h4 class="text-xl font-bold mb-4 uppercase tracking-wide">Website</h4>
-                        <a href="https://pp-cars.co.uk" target="_blank" class="text-gray-400 font-light hover:text-white transition duration-200">
+                        <a href="https://pp-cars.co.uk" target="_blank" class="text-gray-400 font-light hover:text-white transition duration-300">
                             pp-cars.co.uk
                         </a>
                     </div>
