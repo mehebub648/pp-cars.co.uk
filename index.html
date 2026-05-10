@@ -33,16 +33,27 @@
         
         .hero-bg {
             /* Hero background with a slow zoom animation effect */
+            background-color: #000;
+            overflow: hidden;
+        }
+
+        .hero-bg::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
             background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url('https://images.unsplash.com/photo-1603584173870-7f23fdae1b7a?auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-position: center;
+            background-repeat: no-repeat;
             background-attachment: fixed;
             animation: zoomBg 20s infinite alternate;
+            z-index: 0;
+            pointer-events: none;
         }
 
         @keyframes zoomBg {
-            0% { background-size: 100% auto; }
-            100% { background-size: 110% auto; }
+            0% { transform: scale(1); }
+            100% { transform: scale(1.1); }
         }
 
         .reveal {
